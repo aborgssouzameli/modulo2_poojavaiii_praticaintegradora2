@@ -74,10 +74,10 @@ public class AppMain {
 
     public void exibirValorMedioVeiculoPorMarca() {
         for (Marca marca: Marca.values()) {
-            OptionalDouble valorMedioVeiculo = retornarStreamVeiculosGaragem()
+            double valorMedioVeiculo = retornarStreamVeiculosGaragem()
                     .filter(veiculo-> marca.equals(veiculo.getMarca()))
-                    .mapToDouble(VeiculoService::getPreco).average();
-            System.out.printf("\nPreço médio de veículos por marca %s: %.2f\n", marca, valorMedioVeiculo.getAsDouble());
+                    .mapToDouble(VeiculoService::getPreco).average().getAsDouble();
+            System.out.printf("\nPreço médio de veículos por marca %s: %.2f\n", marca, valorMedioVeiculo);
         }
     }
 
