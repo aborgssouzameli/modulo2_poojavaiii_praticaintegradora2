@@ -77,7 +77,7 @@ public class AppMain {
             OptionalDouble valorMedioVeiculo = retornarStreamVeiculosGaragem()
                     .filter(veiculo-> marca.equals(veiculo.getMarca()))
                     .mapToDouble(VeiculoService::getPreco).average();
-            System.out.printf("\nPreço médio de veículos da marca %s: %.2f\n", marca, valorMedioVeiculo.getAsDouble());
+            System.out.printf("\nPreço médio de veículos por marca %s: %.2f\n", marca, valorMedioVeiculo.getAsDouble());
         }
     }
 
